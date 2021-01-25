@@ -1,0 +1,5 @@
+  /* Works - pass "my-custom-class" in cssClass to increase specificity */
+  .my-custom-class {
+    --button-background	: #ffffff; 
+    --color:#3C3C;
+  }

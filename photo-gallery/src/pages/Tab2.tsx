@@ -1,10 +1,9 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
-import { camera, trash, close } from 'ionicons/icons';
+import { camera} from 'ionicons/icons';
 import { IonFab, IonFabButton, IonIcon, IonGrid, IonRow,
-         IonCol, IonImg, IonActionSheet } from '@ionic/react';
+         IonCol, IonImg } from '@ionic/react';
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
 const Tab2: React.FC = () => {
   const { photos , takePhoto } = usePhotoGallery();
