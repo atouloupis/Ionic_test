@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "562563890357",
+    "firebase_url": "https://coronavirus-f6d3c-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "coronavirus-f6d3c",
+    "storage_bucket": "coronavirus-f6d3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562563890357:android:9cbe0eb1a9f1f2f12652fc",
+        "android_client_info": {
+          "package_name": "com.ionicTest.firstApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562563890357-oqpld4c545k8753duf61sino7oc67cfn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionicTest.firstApp",
+            "certificate_hash": "95ae8fe68e898b5286eb70833cceba63311bff42"
+          }
+        },
+        {
+          "client_id": "562563890357-r31uuh2ks3br7no4lrogm11og1is3usi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnZiOqnjdFakTHCrAMbk2S8ZRnfsZ_V7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562563890357-r31uuh2ks3br7no4lrogm11og1is3usi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "562563890357-d948jh2s7vrpj9d5clie2s9kpvrtef10.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ionicTest.firstApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

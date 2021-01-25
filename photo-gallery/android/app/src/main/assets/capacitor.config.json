@@ -1,0 +1,17 @@
+{
+  "appId": "com.ionicTest.firstApp",
+  "appName": "ionicTest",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    },
+    "GoogleAuth": {
+      "scopes": ["profile","email"],
+      "serverClientId": "562563890357-oqpld4c545k8753duf61sino7oc67cfn.apps.googleusercontent.com"
+      }
+  },
+  "cordova": {}
+}
