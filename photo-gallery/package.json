@@ -29,6 +29,12 @@
     "react-scripts": "^3.4.4",
     "typescript": "3.8.3"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
