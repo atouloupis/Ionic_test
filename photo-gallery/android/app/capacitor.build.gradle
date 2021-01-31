@@ -9,7 +9,11 @@ android {
 
 apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
+<<<<<<< HEAD
     implementation project(':codetrix-studio-capacitor-google-auth')
+=======
+
+>>>>>>> fc63e7e1d8b1f4c99801f05f7fc22eee8a78d912
 
 }
 
