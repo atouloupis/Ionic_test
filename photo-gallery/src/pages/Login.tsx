@@ -1,11 +1,10 @@
-import { IonContent, IonText, IonRow, IonCol, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonImg } from '@ionic/react';
-import React, { Component } from 'react';
+import { IonContent, IonText, IonRow, IonCol, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
+import React, { Component} from 'react';
 import './Login.css';
 import { Plugins } from '@capacitor/core';
 import "@codetrix-studio/capacitor-google-auth";
-
 const INITIAL_STATE = {
-
+loggedin:false
 };
 
 class Login extends Component {
@@ -20,9 +19,11 @@ class Login extends Component {
     const result = await Plugins.GoogleAuth.signIn();
     console.log('result', result);
     if (result) {
+      //mise à jour props
       history.push({
-        pathname: '/tab1',
-        state: { name: result.name || result.displayName, image: result.imageUrl, email: result.email }
+        state: { name: result.name || result.displayName, image: result.imageUrl, email: result.email },
+        pathname: '/tab3',
+        loggedin:true
       });
     }
   }

@@ -20,6 +20,7 @@
     "@types/react-dom": "^16.9.4",
     "@types/react-router": "^5.1.4",
     "@types/react-router-dom": "^5.1.7",
+    "capacitor-admob": "^0.1.0",
     "firebase": "^8.2.3",
     "ionicons": "^5.0.0",
     "react": "^16.13.0",

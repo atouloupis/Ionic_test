@@ -1,26 +1,18 @@
 {
-<<<<<<< HEAD
   "appId": "com.ionicTest.firstApp",
   "appName": "ionicTest",
-=======
-  "appId": "io.ionic.starter",
-  "appName": "photo-gallery",
->>>>>>> fc63e7e1d8b1f4c99801f05f7fc22eee8a78d912
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0
-<<<<<<< HEAD
     },
     "GoogleAuth": {
       "scopes": ["profile","email"],
-      "serverClientId": "562563890357-oqpld4c545k8753duf61sino7oc67cfn.apps.googleusercontent.com"
+      "serverClientId": "562563890357-r31uuh2ks3br7no4lrogm11og1is3usi.apps.googleusercontent.com",
+      "forceCodeForRefreshToken": true
       }
-=======
-    }
->>>>>>> fc63e7e1d8b1f4c99801f05f7fc22eee8a78d912
   },
   "cordova": {}
 }

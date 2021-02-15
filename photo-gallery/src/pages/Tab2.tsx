@@ -5,8 +5,16 @@ import { camera} from 'ionicons/icons';
 import { IonFab, IonFabButton, IonIcon, IonGrid, IonRow,
          IonCol, IonImg } from '@ionic/react';
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
-const Tab2: React.FC = () => {
+import { Redirect } from 'react-router-dom';
+
+interface props
+{
+history:{location:{loggedin:boolean}};
+};
+
+const Tab2: React.FC <props> = ({history}:props) => {
   const { photos , takePhoto } = usePhotoGallery();
+  if (history.location.loggedin === false || history.location.loggedin === undefined){return(<Redirect to="/" />);}else{
   return (
     <IonPage>
       <IonHeader>
@@ -31,7 +39,7 @@ const Tab2: React.FC = () => {
         </IonFab>
       </IonContent>
     </IonPage>
-  );
+  );}
 };
 
 export default Tab2;

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
+
     package="com.ionicTest.firstApp">
-=======
-    package="io.ionic.starter">
->>>>>>> fc63e7e1d8b1f4c99801f05f7fc22eee8a78d912
+
 
     <application
         android:allowBackup="true"
@@ -13,14 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-6646356301827477~5728246895" />
         <activity
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-<<<<<<< HEAD
             android:name="com.ionicTest.firstApp.MainActivity"
-=======
-            android:name="io.ionic.starter.MainActivity"
->>>>>>> fc63e7e1d8b1f4c99801f05f7fc22eee8a78d912
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBarLaunch"
             android:launchMode="singleTask">
@@ -56,10 +50,7 @@
     <!-- Camera, Photos, input file -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<<<<<<< HEAD
-=======
 
->>>>>>> fc63e7e1d8b1f4c99801f05f7fc22eee8a78d912
     <!-- Geolocation API -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -72,8 +63,5 @@
     <!-- Audio -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
-<<<<<<< HEAD
-=======
 
->>>>>>> fc63e7e1d8b1f4c99801f05f7fc22eee8a78d912
 </manifest>

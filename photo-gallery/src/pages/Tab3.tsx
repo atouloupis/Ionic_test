@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonButton, IonActionSheet, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonGrid, IonRow, IonCol, IonIcon } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonButton, IonActionSheet, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonGrid, IonRow, IonCol, IonIcon, IonFab, IonFabButton } from '@ionic/react';
 import { heart, trash, close, caretForwardCircle, share, add } from 'ionicons/icons';
 import HomePage from '../components/HomePage';
 import './Tab3.css';
 import  firebase from '../Firebase';
 
+interface props
+{
+history:{location:{loggedin:boolean}};
+};
 
-const Tab3: React.FC = () => {
-
+const Tab3: React.FC<props> = ({history}:props) => {
+  console.log("history")
+  console.log(history);
+  console.log("loggedin")
+  console.log(history.location.loggedin);
   const [datenow] = useState(
     new Intl.DateTimeFormat("en-GB", {
       year: "numeric",
@@ -28,7 +35,7 @@ const Tab3: React.FC = () => {
       let caseCount = 10
       let deathCount = 0
       let recovCount = 0
-      console.log(data);
+      //console.log(data);
       data.forEach((doc) => {
         caseCount = caseCount + doc.cases
         deathCount = deathCount + doc.deaths
@@ -44,18 +51,16 @@ const Tab3: React.FC = () => {
 
   const snapshotToArray = (snapshot: any) => {
     const returnArr: any[] = []
-  
     snapshot.forEach((childSnapshot: any) => {
         const item = childSnapshot.val()
         item.key = childSnapshot.key
         returnArr.push(item)
     });
-  
     return returnArr;
   }
   
-
   const [showActionSheet, setShowActionSheet] = useState(false);
+  
   return (
     <IonPage>
       <IonHeader>
@@ -120,6 +125,7 @@ const Tab3: React.FC = () => {
         >
         </IonActionSheet>
         <HomePage name="HomePage" />
+        <Greeting isLoggedIn={history.location.loggedin} />
         <IonCard color="light">
           <IonCardHeader>
             <IonCardTitle>Latest Situation per {datenow}</IonCardTitle>
@@ -142,7 +148,26 @@ const Tab3: React.FC = () => {
         </IonCard>
       </IonContent>
     </IonPage>
-  );
+   );
 };
+
+
+function UserGreeting() {
+  return (        
+  <IonFab vertical="top" horizontal="end" slot="fixed">
+    <IonFabButton>
+      <IonIcon icon={add} />
+    </IonFabButton>
+  </IonFab>
+);
+}
+
+function Greeting(props: { isLoggedIn: any; }) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return (null);
+}
 
 export default Tab3;
