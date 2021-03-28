@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonButton, IonCol, IonContent, IonHeader, IonItem, IonLabel, IonRow, IonText, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCol, IonContent, IonHeader, IonItem, IonLabel, IonPage, IonRow, IonText, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab1.css';
 import { Plugins } from '@capacitor/core';
@@ -39,7 +39,7 @@ class Tab1 extends React.Component<RouteComponentProps> {
     if (selfProps.history.location.state !== undefined)
     {
       this.setState({
-        loggedIn:false,
+        loggedIn:true,
         user: {
           name: selfProps.history.location.state.name,
           image: selfProps.history.location.state.image,
@@ -51,7 +51,7 @@ class Tab1 extends React.Component<RouteComponentProps> {
 
   render() {
   return (
-            <>
+    <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Tab 1</IonTitle>
@@ -71,7 +71,6 @@ class Tab1 extends React.Component<RouteComponentProps> {
               </IonText>
             </IonCol>
           </IonRow>
-
           {this.state.user.name &&
             <IonItem>
               <IonThumbnail slot="start">
@@ -87,7 +86,7 @@ class Tab1 extends React.Component<RouteComponentProps> {
             Logout from Google
         </IonButton>
       </IonContent>
-      </>
+    </IonPage>
   )}
 }
 

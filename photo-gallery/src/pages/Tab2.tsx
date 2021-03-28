@@ -14,7 +14,6 @@ history:{location:{loggedin:boolean}};
 
 const Tab2: React.FC <props> = ({history}:props) => {
   const { photos , takePhoto } = usePhotoGallery();
-  if (history.location.loggedin === false || history.location.loggedin === undefined){return(<Redirect to="/" />);}else{
   return (
     <IonPage>
       <IonHeader>
@@ -39,7 +38,8 @@ const Tab2: React.FC <props> = ({history}:props) => {
         </IonFab>
       </IonContent>
     </IonPage>
-  );}
-};
+  );
+
+}
 
 export default Tab2;

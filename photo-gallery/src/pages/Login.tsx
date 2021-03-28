@@ -1,4 +1,4 @@
-import { IonContent, IonText, IonRow, IonCol, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
+import { IonContent, IonText, IonRow, IonCol, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonToast } from '@ionic/react';
 import React, { Component} from 'react';
 import './Login.css';
 import { Plugins } from '@capacitor/core';
@@ -13,6 +13,9 @@ class Login extends Component {
   constructor(props: any) {
     super(props);
     this.state = { ...INITIAL_STATE };
+    this.state = {
+      loggedin:true
+      };
   }
   async signIn(): Promise<void> {
     const { history } = this.props;
@@ -22,7 +25,7 @@ class Login extends Component {
       //mise à jour props
       history.push({
         state: { name: result.name || result.displayName, image: result.imageUrl, email: result.email },
-        pathname: '/tab3',
+        pathname: '/tab1',
         loggedin:true
       });
     }
@@ -56,9 +59,15 @@ class Login extends Component {
             Login with Google
         </IonButton>
         </IonContent>
+        <IonToast
+        isOpen={this.state.loggedin}
+        message="this message"
+        color= 'dark'
+        position="top"
+        duration={2000}
+      />
       </IonPage>
     )
   }
 }
-
 export default Login;

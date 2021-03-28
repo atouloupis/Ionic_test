@@ -2,21 +2,26 @@ import React, { Component } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonCard, IonCardContent } from '@ionic/react';
 import './Tab3.css';
 import { AdOptions, AdSize, AdPosition } from 'capacitor-admob';
-import { Plugins } from '@capacitor/core';
-const { AdMob, Toast } = Plugins;
-
+import { Plugins, PushNotification, PushNotificationToken, PushNotificationActionPerformed } from '@capacitor/core';
+const { AdMob, Toast, PushNotifications  } = Plugins;
 
 class Tab4 extends Component {
   constructor(props: any) {
     super(props);
     this.state = {};
-    AdMob.initialize('ca-app-pub-6646356301827477~5728246895');
+    // Test app ID
+    //AdMob.initialize('ca-app-pub-3940256099942544~3347511713');
+    //Prod app ID
+    AdMob.initialize('ca-app-pub-6646356301827477~3935680277');
   }
   // This Banner AD have bottom margin to avoid TabBar Overlaping for TabBar 
   showTabBarBanner() {
     const options: AdOptions = {
-      adId: 'ca-app-pub-6646356301827477/5740689336',
-      adSize: AdSize.SMART_BANNER,
+      //Test banner ID
+      // adId: 'ca-app-pub-3940256099942544/6300978111',
+      // Prod banner ID
+      adId: 'ca-app-pub-6646356301827477/4473477140',
+      adSize: AdSize.BANNER,
       position: AdPosition.BOTTOM_CENTER,
       hasTabBar: true,  // make it true if you have TabBar Layout.
       tabBarHeight: 56  // you can assign custom margin in pixel default is 56
@@ -38,6 +43,12 @@ class Tab4 extends Component {
     // Subscibe Banner Event Listener
     AdMob.addListener('onAdLoaded', async () => {
       console.log('Showing TabBar Banner AD.');
+    });
+    AdMob.addListener('onAdFailedToLoad', async(info: any) => {
+      console.log('onAdFailedToLoad');
+      console.log("onAdFailedToLoad",Object.values(info).toString());
+      console.log("onAdFailedToLoad",Object.keys(info));
+      console.log("onAdFailedToLoad",Object.entries(info));
     });
   }
   hideBanner() {
@@ -75,6 +86,7 @@ class Tab4 extends Component {
       }
     );
   }
+  
   render() {
     return (
       <IonPage>
